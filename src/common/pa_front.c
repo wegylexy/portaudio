@@ -148,7 +148,11 @@ void PaUtil_SetLastHostErrorInfo( PaHostApiTypeId hostApiType, long errorCode,
     lastHostErrorInfo_.hostApiType = hostApiType;
     lastHostErrorInfo_.errorCode = errorCode;
 
+#ifdef _MSC_VER
+	strncpy_s(lastHostErrorText_, PA_LAST_HOST_ERROR_TEXT_LENGTH_, errorText, PA_LAST_HOST_ERROR_TEXT_LENGTH_);
+#else
     strncpy( lastHostErrorText_, errorText, PA_LAST_HOST_ERROR_TEXT_LENGTH_ );
+#endif
 }
 
 

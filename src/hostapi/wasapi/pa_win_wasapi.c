@@ -1493,7 +1493,7 @@ PaError PaWasapi_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiInd
 				// We need to set the result to a value otherwise we will return paNoError
 				// [IF_FAILED_JUMP(hResult, error);]
 				IF_FAILED_INTERNAL_ERROR_JUMP(hr, result, error);
-				wcsncpy(paWasapi->defaultRenderer, pszDeviceId, MAX_STR_LEN-1);
+				wcsncpy_s(paWasapi->defaultRenderer, MAX_STR_LEN, pszDeviceId, MAX_STR_LEN-1);
 				CoTaskMemFree(pszDeviceId);
 				IMMDevice_Release(defaultRenderer);
 			}
@@ -1517,7 +1517,7 @@ PaError PaWasapi_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiInd
 				// We need to set the result to a value otherwise we will return paNoError
 				// [IF_FAILED_JUMP(hResult, error);]
 				IF_FAILED_INTERNAL_ERROR_JUMP(hr, result, error);
-				wcsncpy(paWasapi->defaultCapturer, pszDeviceId, MAX_STR_LEN-1);
+				wcsncpy_s(paWasapi->defaultCapturer, MAX_STR_LEN, pszDeviceId, MAX_STR_LEN-1);
 				CoTaskMemFree(pszDeviceId);
 				IMMDevice_Release(defaultCapturer);
 			}
@@ -1588,7 +1588,7 @@ PaError PaWasapi_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiInd
 				// We need to set the result to a value otherwise we will return paNoError
 				// [IF_FAILED_JUMP(hr, error);]
 				IF_FAILED_INTERNAL_ERROR_JUMP(hr, result, error);
-                wcsncpy(paWasapi->devInfo[i].szDeviceID, pszDeviceId, MAX_STR_LEN-1);
+                wcsncpy_s(paWasapi->devInfo[i].szDeviceID, MAX_STR_LEN, pszDeviceId, MAX_STR_LEN-1);
                 CoTaskMemFree(pszDeviceId);
 
                 if (lstrcmpW(paWasapi->devInfo[i].szDeviceID, paWasapi->defaultCapturer) == 0)
@@ -1637,7 +1637,7 @@ PaError PaWasapi_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiInd
 					if (value.pwszVal)
 						WideCharToMultiByte(CP_UTF8, 0, value.pwszVal, (int)wcslen(value.pwszVal), deviceName, MAX_STR_LEN - 1, 0, 0);
 					else
-						_snprintf(deviceName, MAX_STR_LEN - 1, "baddev%d", i);
+						_snprintf_s(deviceName, MAX_STR_LEN - 1, MAX_STR_LEN, "baddev%d", i);
                     deviceInfo->name = deviceName;
                     PropVariantClear(&value);
 					PA_DEBUG(("WASAPI:%d| name[%s]\n", i, deviceInfo->name));
