@@ -1477,7 +1477,7 @@ PaError PaWasapi_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiInd
     {
         {
             IMMDevice *defaultRenderer = NULL;
-            hr = IMMDeviceEnumerator_GetDefaultAudioEndpoint(paWasapi->enumerator, eRender, eMultimedia, &defaultRenderer);
+            hr = IMMDeviceEnumerator_GetDefaultAudioEndpoint(paWasapi->enumerator, eRender, eCommunications, &defaultRenderer);
             if (hr != S_OK)
 			{
 				if (hr != E_NOTFOUND) {
@@ -1501,7 +1501,7 @@ PaError PaWasapi_Initialize( PaUtilHostApiRepresentation **hostApi, PaHostApiInd
 
         {
             IMMDevice *defaultCapturer = NULL;
-            hr = IMMDeviceEnumerator_GetDefaultAudioEndpoint(paWasapi->enumerator, eCapture, eMultimedia, &defaultCapturer);
+            hr = IMMDeviceEnumerator_GetDefaultAudioEndpoint(paWasapi->enumerator, eCapture, eCommunications, &defaultCapturer);
             if (hr != S_OK)
 			{
 				if (hr != E_NOTFOUND) {
