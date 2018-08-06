@@ -28,6 +28,9 @@
     <Filter Include="Source Files\hostapi\wasapi">
       <UniqueIdentifier>{b3230b28-926a-4de5-a438-53c3cc3ed235}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\cpp">
+      <UniqueIdentifier>{b090f694-b04b-4544-a3fb-ed43766bfad5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\common\pa_trace.c">
@@ -74,6 +77,57 @@
     </ClCompile>
     <ClCompile Include="..\..\src\hostapi\wasapi\pa_win_wasapi.c">
       <Filter>Source Files\hostapi\wasapi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\AsioDeviceAdapter.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\BlockingStream.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\CallbackInterface.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\CallbackStream.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\CFunCallbackStream.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\CppFunCallbackStream.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\Device.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\DirectionSpecificStreamParameters.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\Exception.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\HostApi.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\InterfaceCallbackStream.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\MemFunCallbackStream.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\Stream.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\StreamParameters.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\System.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\SystemDeviceIterator.cxx">
+      <Filter>Source Files\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bindings\cpp\source\portaudiocpp\SystemHostApiIterator.cxx">
+      <Filter>Source Files\cpp</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
